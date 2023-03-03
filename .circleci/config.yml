@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   android: circleci/android@2.0
+  codecov: codecov/codecov@3.2.4
 
 jobs:
   test:
@@ -11,9 +12,15 @@ jobs:
       tag: 2021.10.1
     steps:
       - checkout
+      - android/restore-build-cache
+      - android/restore-gradle-cache
       - run:
           name: Run Test
-          command: ./gradlew test
+          command: ./gradlew koverXmlReportDebug
+      - codecov/upload:
+          file: app/build/reports/kover/reportDebug.xml
+      - android/save-build-cache
+      - android/save-gradle-cache
 workflows:
   test:
     jobs:
