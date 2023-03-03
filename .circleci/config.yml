@@ -12,10 +12,14 @@ jobs:
       tag: 2021.10.1
     steps:
       - checkout
+      - android/restore-build-cache
+      - android/restore-gradle-cache
       - run:
           name: Run Test
           command: ./gradlew koverXmlReportDebug
       - codecov/upload
+      - android/save-build-cache
+      - android/save-gradle-cache
 workflows:
   test:
     jobs:
