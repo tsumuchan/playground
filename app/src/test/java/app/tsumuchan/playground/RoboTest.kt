@@ -1,8 +1,14 @@
+@file:OptIn(ExperimentalRoborazziApi::class, InternalRoborazziApi::class)
+
 package app.tsumuchan.playground
 
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
+import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
+import com.github.takahirom.roborazzi.InternalRoborazziApi
+import com.github.takahirom.roborazzi.RoborazziContext
 import com.github.takahirom.roborazzi.captureRoboImage
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,6 +22,11 @@ class RoboTest {
     @get:Rule
     val composeRule = createComposeRule()
 
+    @Before
+    fun setup() {
+        RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
+    }
+
     @Test
     fun test() {
         composeRule.setContent {
@@ -23,7 +34,7 @@ class RoboTest {
         }
 
         composeRule
-            .onNode(hasText("Hello Robo!"))
+            .onNode(hasText("Hello Robo!!"))
             .assertExists()
     }
 
@@ -34,7 +45,7 @@ class RoboTest {
         }
 
         composeRule
-            .onNode(hasText("Hello Roborazzi!"))
+            .onNode(hasText("Hello Roborazzi!!"))
             .captureRoboImage()
     }
 }
