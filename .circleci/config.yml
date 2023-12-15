@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: Run Test
-          command: ./gradlew test
+          command: ./gradlew testDebug
 workflows:
   test:
     jobs:
