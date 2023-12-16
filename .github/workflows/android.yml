@@ -29,5 +29,7 @@ jobs:
       with:
         file_pattern: '*/*.png'
         commit_message: "🤖 Updates screenshots"
+    - name: Runscreenshotbot
+      run: ./gradlew recordAndVerifyRoborazziDebugScreenshotbotCI
     - name: Run test
       run: ./gradlew testDebug

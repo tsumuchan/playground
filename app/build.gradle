@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlinx.kover'
     id 'io.github.takahirom.roborazzi'
+    id 'io.screenshotbot.plugin'
 }
 
 android {
