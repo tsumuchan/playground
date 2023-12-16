@@ -34,7 +34,7 @@ class RoboTest {
         }
 
         composeRule
-            .onNode(hasText("Hello Robo!!"))
+            .onNode(hasText("Hello Robo!"))
             .assertExists()
     }
 
@@ -45,7 +45,7 @@ class RoboTest {
         }
 
         composeRule
-            .onNode(hasText("Hello screenshotbot!!"))
+            .onNode(hasText("Hello screenshotbot!"))
             .captureRoboImage()
     }
 }
