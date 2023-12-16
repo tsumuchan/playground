@@ -24,7 +24,7 @@ class RoboTest {
 
     @Before
     fun setup() {
-        RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
+        // RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
     }
 
     @Test
@@ -34,18 +34,18 @@ class RoboTest {
         }
 
         composeRule
-            .onNode(hasText("Hello Robo!!"))
+            .onNode(hasText("Hello Robo!"))
             .assertExists()
     }
 
     @Test
     fun roborazziTest() {
         composeRule.setContent {
-            Greeting(name = "Roborazzi")
+            Greeting(name = "screenshotbot")
         }
 
         composeRule
-            .onNode(hasText("Hello Roborazzi!!"))
+            .onNode(hasText("Hello screenshotbot!"))
             .captureRoboImage()
     }
 }

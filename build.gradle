@@ -10,4 +10,5 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
     id 'org.jetbrains.kotlinx.kover' version '0.7.0-Alpha' apply false
     id 'io.github.takahirom.roborazzi' version '1.8.0-rc-1' apply false
+    id 'io.screenshotbot.plugin' version '1.6' apply false
 }
