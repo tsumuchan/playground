@@ -24,7 +24,7 @@ class RoboTest {
 
     @Before
     fun setup() {
-        RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
+        // RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
     }
 
     @Test
