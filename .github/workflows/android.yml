@@ -12,9 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
       - uses: actions/checkout@v4
       - name: set up JDK 17
@@ -37,3 +34,7 @@ jobs:
         run: ./gradlew recordRoborazziDebugScreenshotbot
       - name: Run test
         run: ./gradlew testDebug
+      - uses: reg-viz/reg-actions@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          image-directory-path: "./app/build/outputs/roborazzi"
