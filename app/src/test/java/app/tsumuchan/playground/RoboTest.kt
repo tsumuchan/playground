@@ -41,11 +41,11 @@ class RoboTest {
     @Test
     fun roborazziTest() {
         composeRule.setContent {
-            Greeting(name = "reg-viz/reg-actions")
+            Greeting(name = "reg-viz/reg-actions2")
         }
 
         composeRule
-            .onNode(hasText("Hello reg-viz/reg-actions!"))
+            .onNode(hasText("Hello reg-viz/reg-actions2!"))
             .captureRoboImage()
     }
 }
